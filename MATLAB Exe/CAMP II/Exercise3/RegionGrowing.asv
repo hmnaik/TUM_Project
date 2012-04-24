@@ -1,0 +1,58 @@
+function Region = RegionGrowing(I,T)
+
+Visited = zeros(size(I));
+Region = zeros(size(I));
+
+% Location of the 8 neighbors
+neigb=[-1 0; 1 0; 0 -1;0 1; 1 1; -1 -1; -1 1; 1 -1];
+[s1, s2] = size(I);
+t = tic;
+
+% Select and add the seed point to tho the queue of pixel to visist "list"
+figure; imagesc(I);axis image; axis xy; title('Select the seed point');...
+    colormap gray;axis off
+[y x] = ginput(1);
+x = round(x); 
+y = round(y);
+Im = I(x,y);
+list = [x, y];
+
+% Grow until no more pixel can be added to the FIFO list
+Im = I(x,y); % Inintuialize the mean Intensity inside the region
+list = [x, y];
+while(size(list,1)~=0)
+    
+    % Pick up and remove the first pixel from the list
+    ?????
+    
+    % Check if pixel is homogeneous
+    % By comparing it to the mean Intensity inside the region
+    
+    if homogen???
+        ?????
+        ????
+        for k = 1:8
+            ????
+            ????
+        end
+    else
+       ????
+       ????
+    end
+    Im = mean(I(Region==1));
+    
+    if toc(t)>1/23
+        imagesc(I+Region,[0 1]); axis image; colormap gray; axis off; axis xy;
+        drawnow;
+        t = tic;
+    end
+    
+end
+
+%% Display
+imagesc(I+Region,[0 1]); axis image; colormap gray; axis off; axis xy;
+drawnow;
+
+
+
+
