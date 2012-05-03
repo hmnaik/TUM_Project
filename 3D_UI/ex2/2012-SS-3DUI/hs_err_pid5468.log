@@ -1,0 +1,280 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x647c2d71, pid=5468, tid=4844
+#
+# JRE version: 6.0_31-b05
+# Java VM: Java HotSpot(TM) Client VM (20.6-b01 mixed mode, sharing windows-x86 )
+# Problematic frame:
+# C  [ubitrack.dll+0x22d71]
+#
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x01eea800):  JavaThread "main" [_thread_in_native, id=4844, stack(0x00370000,0x003c0000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000008
+
+Registers:
+EAX=0x003bfa10, EBX=0x003bfa68, ECX=0x00000004, EDX=0x003bfa68
+ESP=0x003bf964, EBP=0x00000000, ESI=0x003bfb7c, EDI=0x04c2dbc8
+EIP=0x647c2d71, EFLAGS=0x00010286
+
+Top of Stack: (sp=0x003bf964)
+0x003bf964:   00000004 6486e33c 003bfb7c 981f2f35
+0x003bf974:   04c2dbc8 003bfa68 003bfbac 00000000
+0x003bf984:   00000000 003bf9bc 003bf9f0 003bfa14
+0x003bf994:   6d956b74 00000004 ffffffff ffffffff
+0x003bf9a4:   152d32c9 003bfa68 00000000 00000001
+0x003bf9b4:   00000a96 003bfb50 00000001 003bfa4c
+0x003bf9c4:   6d935dde 003bfa38 025682d0 ffffffff
+0x003bf9d4:   ffffffff 00000024 6da06d20 00000000 
+
+Instructions: (pc=0x647c2d71)
+0x647c2d51:   2c 8b 4c 24 20 5f 5e 5d 89 08 89 50 04 5b 83 c4
+0x647c2d61:   18 c2 08 00 cc cc cc cc cc cc cc cc cc cc cc 51
+0x647c2d71:   8b 41 04 57 8b 78 04 80 7f 31 00 89 44 24 04 75
+0x647c2d81:   6b 53 55 8b 6c 24 14 8b 5d 10 56 8d 64 24 00 83 
+
+
+Register to memory mapping:
+
+EAX=0x003bfa10 is pointing into the stack for thread: 0x01eea800
+EBX=0x003bfa68 is pointing into the stack for thread: 0x01eea800
+ECX=0x00000004 is an unknown value
+EDX=0x003bfa68 is pointing into the stack for thread: 0x01eea800
+ESP=0x003bf964 is pointing into the stack for thread: 0x01eea800
+EBP=0x00000000 is an unknown value
+ESI=0x003bfb7c is pointing into the stack for thread: 0x01eea800
+EDI=0x04c2dbc8 is an unknown value
+
+
+Stack: [0x00370000,0x003c0000],  sp=0x003bf964,  free space=318k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ubitrack.dll+0x22d71]  Ubitrack::Util::BlockTimer::initialized+0x2681
+
+[error occurred during error reporting (printing native stack), id 0xc0000005]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  ubitrack.ubitrackJNI.SimpleFacade_setPoseCallback(JLubitrack/SimpleFacade;Ljava/lang/String;JLubitrack/SimplePoseReceiver;)Z+0
+j  ubitrack.SimpleFacade.setPoseCallback(Ljava/lang/String;Lubitrack/SimplePoseReceiver;)Z+11
+j  de.tum.in.far.threedui.general.UbitrackFacade.setPoseCallback(Ljava/lang/String;Lubitrack/SimplePoseReceiver;)Z+6
+j  de.tum.in.far.threedui.ex2.Exercise2.initializeUbitrack()V+22
+j  de.tum.in.far.threedui.ex2.Exercise2.main([Ljava/lang/String;)V+17
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x04b1bc00 JavaThread "J3D-InputDeviceScheduler-1" [_thread_blocked, id=7644, stack(0x0afd0000,0x0b020000)]
+  0x04b1b400 JavaThread "J3D-SoundSchedulerUpdateThread-1" [_thread_blocked, id=7220, stack(0x0af40000,0x0af90000)]
+  0x04b1b000 JavaThread "J3D-RenderStructureUpdateThread-1" [_thread_blocked, id=5900, stack(0x0adb0000,0x0ae00000)]
+  0x04b1a800 JavaThread "J3D-BehaviorScheduler-1" [_thread_blocked, id=7668, stack(0x0ad20000,0x0ad70000)]
+  0x04b1a400 JavaThread "J3D-TransformStructureUpdateThread-1" [_thread_blocked, id=6672, stack(0x0ac90000,0x0ace0000)]
+  0x04b19c00 JavaThread "J3D-RenderingEnvironmentStructureUpdateThread-1" [_thread_blocked, id=3612, stack(0x0ac00000,0x0ac50000)]
+  0x04b19800 JavaThread "J3D-SoundStructureUpdateThread-1" [_thread_blocked, id=3028, stack(0x0ab70000,0x0abc0000)]
+  0x04b19000 JavaThread "J3D-GeometryStructureUpdateThread-1" [_thread_blocked, id=7156, stack(0x0aae0000,0x0ab30000)]
+  0x04b11c00 JavaThread "J3D-BehaviorStructureUpdateThread-1" [_thread_blocked, id=7240, stack(0x0aa50000,0x0aaa0000)]
+  0x04b52800 JavaThread "D3D Screen Updater" daemon [_thread_blocked, id=5172, stack(0x09900000,0x09950000)]
+  0x07056c00 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=6064, stack(0x09550000,0x095a0000)]
+  0x04b54c00 JavaThread "J3D-Renderer-1" [_thread_in_native, id=6472, stack(0x09760000,0x097b0000)]
+  0x04b54000 JavaThread "J3D-MasterControl-1" [_thread_blocked, id=5936, stack(0x096d0000,0x09720000)]
+  0x04af8400 JavaThread "J3D-NotificationThread" [_thread_blocked, id=5848, stack(0x09640000,0x09690000)]
+  0x04af7c00 JavaThread "J3D-TimerThread" [_thread_blocked, id=3704, stack(0x095b0000,0x09600000)]
+  0x04af3000 JavaThread "J3D-RenderingAttributesStructureUpdateThread" [_thread_blocked, id=5548, stack(0x08d00000,0x08d50000)]
+  0x04ad2c00 JavaThread "AWT-Windows" daemon [_thread_in_native, id=2884, stack(0x052e0000,0x05330000)]
+  0x04ad2800 JavaThread "AWT-Shutdown" [_thread_blocked, id=7152, stack(0x05250000,0x052a0000)]
+  0x04ae5800 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=7852, stack(0x04ec0000,0x04f10000)]
+  0x01e38400 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=3344, stack(0x04930000,0x04980000)]
+  0x01e34000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=6524, stack(0x048a0000,0x048f0000)]
+  0x01e33400 JavaThread "Attach Listener" daemon [_thread_blocked, id=7304, stack(0x04810000,0x04860000)]
+  0x01e30c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=7944, stack(0x04780000,0x047d0000)]
+  0x01e1c000 JavaThread "Finalizer" daemon [_thread_blocked, id=7620, stack(0x046f0000,0x04740000)]
+  0x01e1a800 JavaThread "Reference Handler" daemon [_thread_blocked, id=6764, stack(0x04660000,0x046b0000)]
+=>0x01eea800 JavaThread "main" [_thread_in_native, id=4844, stack(0x00370000,0x003c0000)]
+
+Other Threads:
+  0x01dddc00 VMThread [stack: 0x04610000,0x04660000] [id=7176]
+  0x01e41400 WatcherThread [stack: 0x049c0000,0x04a10000] [id=7400]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 4928K, used 3497K [0x246f0000, 0x24c40000, 0x29c40000)
+  eden space 4416K,  72% used [0x246f0000, 0x24a15e88, 0x24b40000)
+  from space 512K,  53% used [0x24bc0000, 0x24c04700, 0x24c40000)
+  to   space 512K,   0% used [0x24b40000, 0x24b40000, 0x24bc0000)
+ tenured generation   total 10944K, used 1084K [0x29c40000, 0x2a6f0000, 0x346f0000)
+   the space 10944K,   9% used [0x29c40000, 0x29d4f118, 0x29d4f200, 0x2a6f0000)
+ compacting perm gen  total 12288K, used 4633K [0x346f0000, 0x352f0000, 0x386f0000)
+   the space 12288K,  37% used [0x346f0000, 0x34b76488, 0x34b76600, 0x352f0000)
+    ro space 10240K,  51% used [0x386f0000, 0x38c1e318, 0x38c1e400, 0x390f0000)
+    rw space 12288K,  55% used [0x390f0000, 0x3978a088, 0x3978a200, 0x39cf0000)
+
+Code Cache  [0x02560000, 0x02648000, 0x04560000)
+ total_blobs=557 nmethods=244 adapters=249 free_code_cache=32623168 largest_free_block=0
+
+Dynamic libraries:
+0x00400000 - 0x00425000 	C:\Program Files (x86)\Java\jre6\bin\javaw.exe
+0x778a0000 - 0x77a20000 	C:\Windows\SysWOW64\ntdll.dll
+0x75e10000 - 0x75f20000 	C:\Windows\syswow64\kernel32.dll
+0x75830000 - 0x75876000 	C:\Windows\syswow64\KERNELBASE.dll
+0x77230000 - 0x772d0000 	C:\Windows\syswow64\ADVAPI32.dll
+0x75770000 - 0x7581c000 	C:\Windows\syswow64\msvcrt.dll
+0x76290000 - 0x762a9000 	C:\Windows\SysWOW64\sechost.dll
+0x75680000 - 0x75770000 	C:\Windows\syswow64\RPCRT4.dll
+0x75400000 - 0x75460000 	C:\Windows\syswow64\SspiCli.dll
+0x753f0000 - 0x753fc000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x759a0000 - 0x75aa0000 	C:\Windows\syswow64\USER32.dll
+0x771a0000 - 0x77230000 	C:\Windows\syswow64\GDI32.dll
+0x76280000 - 0x7628a000 	C:\Windows\syswow64\LPK.dll
+0x77100000 - 0x7719d000 	C:\Windows\syswow64\USP10.dll
+0x762b0000 - 0x76310000 	C:\Windows\system32\IMM32.DLL
+0x755b0000 - 0x7567c000 	C:\Windows\syswow64\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files (x86)\Java\jre6\bin\msvcr71.dll
+0x6d7f0000 - 0x6da9f000 	C:\Program Files (x86)\Java\jre6\bin\client\jvm.dll
+0x732c0000 - 0x732f2000 	C:\Windows\system32\WINMM.dll
+0x71c00000 - 0x71c4c000 	C:\Windows\system32\apphelp.dll
+0x6d7a0000 - 0x6d7ac000 	C:\Program Files (x86)\Java\jre6\bin\verify.dll
+0x6d320000 - 0x6d33f000 	C:\Program Files (x86)\Java\jre6\bin\java.dll
+0x6d7e0000 - 0x6d7ef000 	C:\Program Files (x86)\Java\jre6\bin\zip.dll
+0x65b90000 - 0x65c4d000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\msvcr100.dll
+0x66130000 - 0x66199000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\msvcp100.dll
+0x6f060000 - 0x6f08a000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\log4cpp.dll
+0x72fa0000 - 0x72fa7000 	C:\Windows\system32\WSOCK32.dll
+0x76450000 - 0x76485000 	C:\Windows\syswow64\WS2_32.dll
+0x75c60000 - 0x75c66000 	C:\Windows\syswow64\NSI.dll
+0x647a0000 - 0x64b49000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack.dll
+0x65970000 - 0x65b8e000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\cxcore210.dll
+0x68720000 - 0x687ae000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCP90.dll
+0x726c0000 - 0x72763000 	C:\Windows\WinSxS\x86_microsoft.vc90.crt_1fc8b3b9a1e18e3b_9.0.30729.6161_none_50934f2ebcb7eb57\MSVCR90.dll
+0x64c70000 - 0x64ef8000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\cv210.dll
+0x657b0000 - 0x6587a000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\highgui210.dll
+0x76120000 - 0x7627c000 	C:\Windows\syswow64\ole32.dll
+0x73360000 - 0x734fe000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2\COMCTL32.dll
+0x75550000 - 0x755a7000 	C:\Windows\syswow64\SHLWAPI.dll
+0x6f040000 - 0x6f059000 	C:\Windows\system32\AVIFIL32.dll
+0x69060000 - 0x69074000 	C:\Windows\system32\MSACM32.dll
+0x65380000 - 0x653a1000 	C:\Windows\system32\MSVFW32.dll
+0x76490000 - 0x770da000 	C:\Windows\syswow64\SHELL32.dll
+0x6f020000 - 0x6f033000 	C:\Windows\system32\AVICAP32.dll
+0x73530000 - 0x73539000 	C:\Windows\system32\VERSION.dll
+0x69040000 - 0x69059000 	C:\Windows\system32\OLEPRO32.DLL
+0x773e0000 - 0x7746f000 	C:\Windows\syswow64\OLEAUT32.dll
+0x74e20000 - 0x74ea0000 	C:\Windows\system32\uxtheme.dll
+0x65590000 - 0x657a7000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\utvision.dll
+0x660f0000 - 0x66123000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\freeglut.dll
+0x64ba0000 - 0x64c68000 	C:\Windows\system32\OPENGL32.dll
+0x6ef50000 - 0x6ef72000 	C:\Windows\system32\GLU32.dll
+0x5d340000 - 0x5d427000 	C:\Windows\system32\DDRAW.dll
+0x5d330000 - 0x5d336000 	C:\Windows\system32\DCIMAN32.dll
+0x75c70000 - 0x75e0d000 	C:\Windows\syswow64\SETUPAPI.dll
+0x75c30000 - 0x75c57000 	C:\Windows\syswow64\CFGMGR32.dll
+0x770e0000 - 0x770f2000 	C:\Windows\syswow64\DEVOBJ.dll
+0x74ee0000 - 0x74ef3000 	C:\Windows\system32\dwmapi.dll
+0x6f000000 - 0x6f01d000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack_java.dll
+0x6d000000 - 0x6d14c000 	C:\Program Files (x86)\Java\jre6\bin\awt.dll
+0x737a0000 - 0x737f1000 	C:\Windows\system32\WINSPOOL.DRV
+0x6d230000 - 0x6d27f000 	C:\Program Files (x86)\Java\jre6\bin\fontmanager.dll
+0x6a220000 - 0x6a3e3000 	C:\Windows\system32\d3d9.dll
+0x73800000 - 0x73806000 	C:\Windows\system32\d3d8thk.dll
+0x69870000 - 0x6a216000 	C:\Windows\system32\nvd3dum.dll
+0x691f0000 - 0x69215000 	C:\Windows\system32\powrprof.dll
+0x10000000 - 0x1000e000 	C:\Program Files (x86)\Java\jre6\bin\j3dcore-ogl-chk.dll
+0x07480000 - 0x082f8000 	C:\Windows\system32\nvoglv32.DLL
+0x6d350000 - 0x6d356000 	C:\Program Files (x86)\Java\jre6\bin\jawt.dll
+0x08c40000 - 0x08c69000 	C:\Program Files (x86)\Java\jre6\bin\j3dcore-ogl.dll
+0x68960000 - 0x68981000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\2D3DPoseEstimation.dll
+0x687b0000 - 0x687cd000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\AbsoluteOrientation.dll
+0x66a80000 - 0x66a9c000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\AbsoluteOrientationRANSAC.dll
+0x660d0000 - 0x660e9000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Accumulator.dll
+0x660b0000 - 0x660c4000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Aggregator.dll
+0x66090000 - 0x660a5000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ApplicationEndpointsVision.dll
+0x66070000 - 0x66085000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ApplicationPullSink.dll
+0x65570000 - 0x6558f000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ApplicationPushSink.dll
+0x65540000 - 0x65564000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ApplicationPushSource.dll
+0x652f0000 - 0x65321000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\art.dll
+0x70bd0000 - 0x70be0000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\artBodyFileReader.dll
+0x646e0000 - 0x6479f000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\artErrorEstimator.dll
+0x652c0000 - 0x652ea000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\artSender.dll
+0x64b60000 - 0x64b96000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Average.dll
+0x652a0000 - 0x652b9000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\AVIFrameGrabber.dll
+0x646c0000 - 0x646dd000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Buffer.dll
+0x64620000 - 0x646b6000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\CalibFile.dll
+0x64600000 - 0x64616000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\CameraProjectionMatrix.dll
+0x645d0000 - 0x645f2000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\CastComponent.dll
+0x645b0000 - 0x645cb000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ChessboardFunctions.dll
+0x62720000 - 0x6273c000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Collector.dll
+0x62700000 - 0x62712000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Color2Grayscale.dll
+0x626e0000 - 0x626f1000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Countdown.dll
+0x626c0000 - 0x626dc000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\CovarianceEstimation.dll
+0x626a0000 - 0x626b3000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\DecomposeProjectionMatrix.dll
+0x62680000 - 0x6269a000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Delay.dll
+0x62660000 - 0x62678000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Direction.dll
+0x62640000 - 0x62656000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\DirectShowFrameGrabber.dll
+0x62620000 - 0x62637000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Distance.dll
+0x625f0000 - 0x62613000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ExponentialSmoothing.dll
+0x625d0000 - 0x625e5000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\FindSubPixelCorner.dll
+0x625b0000 - 0x625c1000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\FrameBuffer.dll
+0x62590000 - 0x625a9000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\FrameSampler.dll
+0x62570000 - 0x62586000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\FunctionalFusion.dll
+0x62540000 - 0x6256f000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Gate.dll
+0x62520000 - 0x6253c000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\gps.dll
+0x62500000 - 0x6251b000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\HandEyeCalibration.dll
+0x624e0000 - 0x624f9000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\HighguiFrameGrabber.dll
+0x624b0000 - 0x624d5000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\HighguiWindow.dll
+0x62490000 - 0x624ab000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\HomogeneousMatrixEstimation.dll
+0x62470000 - 0x6248a000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Identity.dll
+0x62450000 - 0x62469000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageFileFrameGrabber.dll
+0x62430000 - 0x62447000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageFileRecorder.dll
+0x62410000 - 0x62424000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageGate.dll
+0x623f0000 - 0x62406000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageIO.dll
+0x62380000 - 0x623f0000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImagePointPlaneIntersection.dll
+0x62360000 - 0x62372000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageShrink.dll
+0x62340000 - 0x62355000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ImageTrigger.dll
+0x62320000 - 0x6233e000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Intrinsic.dll
+0x622f0000 - 0x62315000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\Inversion.dll
+0x622c0000 - 0x622e3000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\kuka.dll
+0x622a0000 - 0x622b6000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\LightPointDetection.dll
+0x62280000 - 0x62299000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\LinearInterpolation.dll
+0x62260000 - 0x62277000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ListExtractor.dll
+0x62240000 - 0x6225c000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\ListGate.dll
+0x62210000 - 0x62234000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\MarkerTracker.dll
+0x621e0000 - 0x62204000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\MatrixMultiplication.dll
+0x621c0000 - 0x621d3000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\MausometerAggregator.dll
+0x62190000 - 0x621b6000 	D:\Clinical Project\TUM_Project\3D_UI\ex2\2012-SS-3DUI\libs\ubitrack\bin\ubitrack\MausometerDriver.dll
+
+VM Arguments:
+jvm_args: -Dfile.encoding=Cp1252 
+java_command: de.tum.in.far.threedui.ex2.Exercise2
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+CLASSPATH=.;C:\Program Files (x86)\Java\jre6\lib\ext\QTJava.zip
+PATH=C:/Program Files (x86)/Java/jre6/bin/client;C:/Program Files (x86)/Java/jre6/bin;C:/Program Files (x86)/Java/jre6/lib/i386;C:\Program Files (x86)\ImageMagick-6.7.6-Q16;C:\Program Files (x86)\PC Connectivity Solution\;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin;C:\Program Files (x86)\MiKTeX 2.8\miktex\bin;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Program Files (x86)\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files (x86)\doxygen\bin;C:\Program Files (x86)\MATLAB\R2011a Student\bin;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\TortoiseSVN\bin;C:\Python27\Scripts;C:\OpenCV2.3\build\x86\vc10\bin;C:\Program Files (x86)\Java\jdk1.6.0_25\bin;D:\Extend3D\Softwares\swig\swigwin-2.0.4\swigwin-2.0.4;D:\Extend3D\Softwares\freeglut\freeglut-MSVC-2.6.0-3.mp\freeglut;D:\Extend3D\ubitrack\bin;C:\OpenCV2.3\build\common\tbb\ia32\vc10;D:\Extend3D\qt\4.7.1\bin;C:\Program Files\TortoiseGit\bin;C:\Program Files (x86)\Tex\miktex\bin;C:\OpenCV2.2\build\bin\Release;C:\OpenCV2.2\build\bin\Debug;C:\WATCOM\BINNT;C:\WATCOM\BINW;C:\Program Files (x86)\CVSNT\;D:\BMC\Sem 4\3D UI\eclipse;
+USERNAME=Naik
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 7 , 64 bit Build 7601 Service Pack 1
+
+CPU:total 4 (2 cores per cpu, 2 threads per core) family 6 model 42 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, ht
+
+Memory: 4k page, physical 4171624k(1838756k free), swap 8341396k(5053544k free)
+
+vm_info: Java HotSpot(TM) Client VM (20.6-b01) for windows-x86 JRE (1.6.0_31-b05), built on Feb  3 2012 18:44:09 by "java_re" with MS VC++ 7.1 (VS2003)
+
+time: Thu May 03 10:23:49 2012
+elapsed time: 1 seconds
+
