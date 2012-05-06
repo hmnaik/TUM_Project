@@ -10,7 +10,7 @@ import ubitrack.ubitrack;
 public class UbitrackFacade {
 
 	public final static String COMPONENT_DIRECTORY = System.getProperty("user.dir") + File.separator + "libs" + File.separator + "ubitrack" + File.separator + "bin" + File.separator + "ubitrack";
-	public final static String DATAFLOW_PATH = System.getProperty("user.dir") + File.separator + "dataflow" + File.separator + "3D-UI-SS-2011-Markertracker_Direct.dfg";// Changed HMN for using own webcam 	
+	public final static String DATAFLOW_PATH = System.getProperty("user.dir") + File.separator + "dataflow" + File.separator + "3D-UI-SS-2012-Markertracker_HighGui.dfg";// Changed HMN for using own webcam 	
 	
 	static {
 		System.load(System.getProperty("user.dir") + File.separator + "libs" + File.separator + "ubitrack" + File.separator + "bin" + File.separator + "msvcr100.dll");

@@ -36,6 +36,9 @@ public class Exercise2 {
 
 	private CubeObject cubeObject;
 	private ModelObject sheepObject;
+	
+	private PoseReceiver poseReceiver;
+	private ImageReceiver imageReceiver;
 		
 	public Exercise2() {
 		ubitrackFacade = new UbitrackFacade();
@@ -49,8 +52,7 @@ public class Exercise2 {
 	}
 	
 	private void initializeUbitrack() {
-		PoseReceiver poseReceiver;
-		ImageReceiver imageReceiver;
+		
 
 		ubitrackFacade.initUbitrack();
 		
