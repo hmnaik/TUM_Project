@@ -18,7 +18,7 @@ public class CylinderObject extends TransformableObject{
 		
 		
 		Transform3D BoxTransform = new Transform3D();
-		BoxTransform.setTranslation(new Vector3d(0.0f,0.0f,0.023f));
+		BoxTransform.setTranslation(new Vector3d(0.0f,0.023f,0.0f));
 		
 		transGroup.setTransform(BoxTransform);
 		transGroup.addChild(button);

@@ -37,8 +37,9 @@ public class Exercise3 {
 	private UbitrackFacade ubitrackFacade;
 
 	private ModelObject sheepObject;
-	
-	private ButtonObject buttonObject;
+	 
+	private ModelObject buttonObject;
+	//private ButtonObject buttonObject;
 	
 	private PoseReceiver poseReceiver;
 	private PoseReceiver poseReceiver2;
@@ -67,7 +68,7 @@ public class Exercise3 {
 		}
 		
 		poseReceiver2 = new PoseReceiver();
-		if (!ubitrackFacade.setPoseCallback("posesink2", poseReceiver2)) {
+		if (!ubitrackFacade.setPoseCallback("posesink4", poseReceiver2)) {
 			return;
 		}
 		
@@ -124,17 +125,27 @@ public class Exercise3 {
 	private void loadButton() {
 		
 		BlueAppearance blueAppearance = new BlueAppearance();
-		buttonObject = new ButtonObject(0.023f, 0.03f, blueAppearance);
+		CylinderObject button = new CylinderObject(0.023f, 0.03f, blueAppearance);
+		
 		
 		Transform3D buttonT3D = new Transform3D();
-		buttonT3D.setRotation(new AxisAngle4d(0,0,1,Math.toRadians(90)));
-		buttonT3D.setTranslation(new Vector3d(0f,0f,0.5f));
+	//	buttonT3D.setTranslation(new Vector3d(0f,0f,0.023f));
+		buttonT3D.setRotation(new AxisAngle4d(1,0,0,Math.toRadians(90)));
 		
 		
-		// buttonObject.getTransformGroup().setTransform(buttonT3D);
+		// Add transformation for rotation to the group 
+		TransformGroup T3d = new TransformGroup();
+		T3d.setTransform(buttonT3D);
+		// Add button model to the TG
+		T3d.addChild(button);
 		
+		// New BG to the TG
+		BranchGroup bgButton = new BranchGroup();
+		bgButton.addChild(T3d);
 		
-	//	cubeObject = new CubeObject(blueAppearance);
+		// Create model object out of the Shape 
+		buttonObject = new ModelObject(bgButton);
+		
 		viewer.addObject(buttonObject);
 		
 		

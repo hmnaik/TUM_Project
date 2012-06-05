@@ -24,15 +24,16 @@ public class ButtonObject extends BranchGroup {
 			
 			// Create your Shape
 			button = new Cylinder(r, h, app);
+			transGroup.addChild(button);
+			// BranchGroup buttongroup = new BranchGroup();
 			
-			BranchGroup buttongroup = new BranchGroup();
 			Transform3D buttonT3D = new Transform3D();
 			buttonT3D.setRotation(new AxisAngle4d(0,0,1,Math.toRadians(90)));
 			buttonT3D.setTranslation(new Vector3d(0f,0f,0.5f));
 			
-			transGroup.setTransform(buttonT3D);
+			transGroup.setTransform(buttonT3D); 
 			
-			transGroup.addChild(button);
+			
 			
 			addChild(transGroup);
 		}
