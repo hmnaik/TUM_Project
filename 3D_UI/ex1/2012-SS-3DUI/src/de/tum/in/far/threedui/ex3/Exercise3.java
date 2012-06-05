@@ -53,6 +53,7 @@ public class Exercise3 {
 		Exercise3 exercise3 = new Exercise3();
 		exercise3.initializeJava3D();
 		exercise3.loadSheep();
+		exercise3.loadButton();
 		exercise3.initializeUbitrack();
 	}
 	
@@ -120,22 +121,30 @@ public class Exercise3 {
 		viewer.addObject(sheepObject);
 	}
 	
-	private void initializeJava3D() {
-		System.out.println("Creating Viewer - " + EXERCISE);
-		viewer = new ViewerUbitrack(EXERCISE, ubitrackFacade);
-
+	private void loadButton() {
+		
 		BlueAppearance blueAppearance = new BlueAppearance();
 		buttonObject = new ButtonObject(0.023f, 0.03f, blueAppearance);
 		
 		Transform3D buttonT3D = new Transform3D();
-		// buttonT3D.setRotation(new AxisAngle4d(0,0,1,Math.toRadians(90)));
+		buttonT3D.setRotation(new AxisAngle4d(0,0,1,Math.toRadians(90)));
 		buttonT3D.setTranslation(new Vector3d(0f,0f,0.5f));
 		
-		buttonObject.getTransformGroup().setTransform(buttonT3D);
+		
+		// buttonObject.getTransformGroup().setTransform(buttonT3D);
 		
 		
 	//	cubeObject = new CubeObject(blueAppearance);
 		viewer.addObject(buttonObject);
+		
+		
+		
+	}
+	
+	private void initializeJava3D() {
+		System.out.println("Creating Viewer - " + EXERCISE);
+		viewer = new ViewerUbitrack(EXERCISE, ubitrackFacade);
+
 		
 		System.out.println("Done");
 	}
